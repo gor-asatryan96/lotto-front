@@ -1,0 +1,3005 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ededed;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  input {
+    border: 0;
+  }
+  button {
+    border: 0;
+    outline: none; 
+
+  }
+
+@font-face {
+    font-family: 'Prompt Bold';
+    src: url('../assets/fonts/Prompt-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Prompt Black';
+    src: url('../assets/fonts/Prompt-Black.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto Bold';
+    src: url('../assets/fonts/Roboto-Bold.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto Black';
+    src: url('../assets/fonts/Roboto-Black.ttf');
+}
+
+::-webkit-scrollbar {
+    width: 0.5vmin;
+    height: 0.5vmin;
+}
+::-webkit-scrollbar-thumb {
+	background: #8369a0;
+	border-radius: 10px;
+}
+
+/* input number without arrows Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.loto {
+    background-color: #ededed;
+    width: 100%;
+}
+
+
+.lotoHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    font-family: 'Prompt Bold';
+    background-color: white;
+    padding: 1% 0 2% 0 ;
+    box-sizing: border-box;
+}
+
+.lotoHeader .lotoHeaderLogo, .lotoHeader .lotoHeaderJackpot {
+    width: 49.5%;
+}
+
+.lotoHeaderLogo {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    margin-left: 2.5%;
+}
+
+.lotoHeaderVerticalLine {
+    width: 1px;
+    height: 11vmin;
+    background-color: gray;
+    opacity: 0.4;
+    margin: 2vmin 0 0 0;
+}
+
+.logo {
+    width: 42vmin
+}
+
+.PMLogo {
+    width: 36vmin;
+}
+
+.lotoHeaderJackpot {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lotoHeaderJackpot > div {
+    display: flex;
+    flex-direction: row;
+    color: #735594;
+    font-weight: bold;
+}
+
+
+.lotoHeaderJackpot > div:nth-child(1) {
+    color: #735594;
+    font-size: 4.5vmin;
+    font-weight: bold;
+}
+
+.lotoHeaderJackpot > div:nth-child(3) {
+    color: #4dbc6a;
+    font-size: 7.5vmin;
+    font-weight: bold;
+    margin-top: -2.5vmin;
+}
+
+.lotoHeaderJackpot .jackpotCurrency {
+    color: #4dbc6a;
+    font-size: 2.5vmin;
+    font-weight: bold;
+    line-height: 8vmin;
+}
+
+
+.jackpotTime {
+    width: 25vmin;
+    margin-left: 2vmin;
+    white-space: nowrap;
+    overflow: visible;
+}
+
+.lotoBanner {
+    position: relative;
+}
+
+.bannerImage {
+    width: 100%;
+    display: block;
+}
+
+
+/* .leftArrow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 97%;
+    width: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rightArrow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 97%;
+    width: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+.lotoNav {
+    display: flex;
+    justify-content: center;
+    font-family: 'Roboto Bold';
+    font-size: 5.7vmin;
+    color: #52be6e;
+}
+
+.lotoNav > div {
+    margin: 2%;
+    cursor: pointer;
+}
+
+.lotoNavActive {
+    color: #8369a0;
+    border-bottom: 1.9px solid #8369a0;
+    padding-bottom: 0.8%;
+}
+
+.waitingHistoryBlock {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 2%;
+    margin-top: 2%;
+}
+
+
+.waitingBlock {
+    width: 33vmin;
+}
+
+.waitingRowHeader {
+    display: flex;
+    flex-direction: row;
+    font-size: 2.5vmin;
+    font-family: 'Roboto Bold';
+    color: #61477e;
+    width: 100%;
+    justify-content: space-between;
+    white-space: nowrap;
+    align-items: center;
+}
+
+.waitingLine {
+    height: 1.4px;
+    background-color: #61477e;
+    width: 100%;
+    opacity: 0.3;
+}
+
+.waitingText {
+    margin: 0 3%
+}
+
+.historyBlock {
+    width: calc(98% - 32vmin);
+}
+
+.historyRowHeader {
+    display: flex;
+    flex-direction: row;
+    font-size: 2.5vmin;
+    font-family: 'Roboto Bold';
+    color: #4dbc6a;
+    width: 100%;
+    justify-content: space-between;
+    white-space: nowrap;
+    align-items: center;
+}
+
+.historyLine {
+    height: 1.4px;
+    background-color: #4dbc6a;
+    width: 100%;
+    opacity: 0.3;
+}
+
+.historyText {
+    margin: 0 3%
+}
+
+.waitingGame {
+    background-color: #735594;
+    border-radius: 4vmin;
+    position: relative;
+    margin-top: 2vmin;
+    padding: 2.5vmin 3vmin;
+    font-family: 'Roboto Black';
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    cursor: pointer;
+    transition: all 0s ease, opacity 3s ease;
+    overflow: visible;
+    opacity: 1;
+}
+
+.waitingGameAnimation {
+    margin-right: -34vmin;
+    margin-left: 34vmin;
+    background-color: #4dbc6a;
+    transition: all 2s ease, opacity 0.3s ease 1.9s;
+    opacity: 0;
+}
+
+.activeWaitingGameArrow {
+    position: absolute;
+    bottom: -2vmin;
+    left: 50%;
+    transform: translate(-50%);
+    border-left: 2.5vmin solid transparent;
+    border-right: 2.5vmin solid transparent;
+    border-top: 2.3vmin solid #735594;
+    opacity: 0;
+    transition:all 0s ease;
+}
+
+
+
+
+.activeHistoryGameArrow {
+    position: absolute;
+    bottom: -2vmin;
+    left: 50%;
+    transform: translate(-50%);
+    border-left: 2.5vmin solid transparent;
+    border-right: 2.5vmin solid transparent;
+    border-top: 2.3vmin solid #269662;
+    opacity: 0;
+}
+
+.waitingArrowAnimation {
+    border-top: 2.5vmin solid #4dbc6a;
+    transition: all 2s ease;
+}
+
+
+.activeOpacity {
+    opacity: 1;
+}
+
+.WGDate {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFF;
+    font-size: 3.2vmin;
+    margin-bottom: 1vmin;
+}
+
+.WGDate > div:nth-child(2) {
+    margin-left: 1vmin;
+    white-space: nowrap;
+}
+
+.WGDrawContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5vmin;
+}
+
+.WGDraw {
+    display: flex;
+    color: #e3ddea;
+    font-size: 2.7vmin;
+}
+
+.WGDraw > div:nth-child(2) {
+    margin-left: 0.5vmin;
+}
+
+.waitingActiveGame {
+    width: 2vmin;
+}
+
+
+.waitingGameLine {
+    width: 0.5vmin;
+    height: 3vmin;
+    background-color: grey;
+    opacity: 0.4;
+    margin: 0 1.2vmin
+}
+
+.historyBlockScroll {
+    overflow-x: auto;
+    display: flex;
+    height: 19vmin;
+    transition: all 0s ease-out;
+}
+
+.historyBlockScrollAnimation {
+    transition: all 2s ease;
+    margin-left: 34vmin;
+}
+
+.clearInput > p {
+    font-size: 3vmin;
+    margin-right: 1.5vmin;
+    cursor: pointer;
+}
+
+
+.historyBlockScroll > div:first-child {
+    margin-left: 0;
+}
+
+.historyBlockScroll > div {
+    margin-left: 2%;
+}
+
+
+
+.historyGame {
+    background-color: #4dbc6a;
+    border-radius: 4vmin;
+    position: relative;
+    margin-top: 2vmin;
+    padding: 2.5vmin 3vmin;
+    font-family: 'Roboto Black';
+    display: flex;
+    flex-direction: column;
+    height: max-content;
+    cursor: pointer;
+    transition: all 0s ease-out;
+    opacity: 1;
+}
+
+
+.historyGameActive {
+    background-color: #269662;
+}
+
+.historyGameDate {
+    color: #FFF;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.historyGameDraw {
+    color: #e3ddea;
+    display: flex;
+    font-size: 3.2vmin;
+    margin-left: 5px;
+}
+
+.historyActiveGame {
+    width: 4vmin;
+}
+
+.historyGameRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.historyGameMonth {
+    margin-left: 5px;
+    font-size: 3.5vmin;
+    white-space: nowrap;
+}
+
+.historyGameTime {
+    font-size: 3.5vmin;
+}
+
+.drawNum {
+    margin-left: 5px;
+}
+
+.historyGameDraw {
+    margin-top: 2%;
+    font-size: 3vmin;
+}
+
+.historyGameLine {
+    width: 1.9px;
+    height: 3vmin;
+    background-color: grey;
+    opacity: 0.4;
+    margin: auto 2vmin;
+}
+
+.gameBoard {
+    background: url('../assets/images/salute.png') no-repeat;
+    background-color: #61477e;
+    width: 96%;
+    border-radius: 15px;
+    background-size: 100%;
+    margin-left: 2%;
+    margin-top: 1vmin;
+    position: relative;
+    padding-bottom: 0.5vmin;
+}
+
+.congratulation{
+    font-family: 'Prompt Bold';
+    font-size: 5vmin;
+    color: white;
+    margin-bottom: 1vmin;
+}
+
+.moto {
+    width: 17vmin;
+}
+
+.leftMoto {
+    position: absolute;
+    top: 5.7vmin;
+}
+
+.currentBall {
+    position: absolute;
+    top: 5vmin;
+    left: 3vmin;
+}
+
+
+.currentBallImage {
+    width: 16vmin;
+}
+
+.rightMoto {
+    position: absolute;
+    top: 5.7vmin;
+    right: 0;
+}
+
+.ellipse {
+    width: 80vmin;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 3vmin;
+}
+
+.gameBoardHeader {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 31vmin;
+}
+
+
+.winLogo {
+    height: 8.5vmin;
+    margin-top: 3vmin;
+}
+
+.loadingContainer{
+    position: relative;
+}
+
+.jackpotLogo {
+    width: 43vmin;
+    margin-top: 3vmin;
+}
+
+.jackpotBoardCurrency {
+    color: #4dbc6a;
+    font-family: 'Prompt Black';
+    font-size: 7.5vmin;
+    margin-left: 3.5vmin;
+    margin-top: -1.5vmin;
+}
+
+.jackpotBoardCurrency > sup {
+    color: #f2f1ef;
+    font-size: 3vmin;
+}
+
+.motoText {
+    color:#69da87;
+    font-family: 'Prompt Bold';
+    font-size: 5.5vmin;
+    margin-top: -1vmin;
+    letter-spacing: 0.2vmin;
+}
+
+.winBoardTime {
+    color: #e6f5ea;
+    font-family: 'Prompt Black';
+    font-size: 5.3vmin;
+    margin-top: -0.5vmin;
+    letter-spacing: 0.2vmin;
+    /* padding-left: 2vmin; */
+    justify-content: center;
+    display: flex;
+}
+
+.ballsContainer {
+    display: flex;
+    justify-content: center;
+
+}
+
+.ballContainer {
+    position: relative;
+}
+
+.ball {
+    width: 7.7vmin;
+    padding: 0 0.8vmin;
+}
+
+.ballNumber {
+    font-family: 'Roboto Black';
+    font-size: 4vmin;
+    position: absolute;
+    left: 50%;
+    top: 46%;
+    transform: translate(-50%, -50%);
+}
+
+.currentBallNumber {
+    font-family: 'Roboto Black';
+    font-size: 7vmin;
+    position: absolute;
+    left: 50%;
+    top: 47%;
+    transform: translate(-50%, -50%);
+}
+
+.gamersBoard {
+    margin-top: 2vh;
+    height: 60vmin;
+    overflow-y: auto;
+    /* display: grid; */
+    grid-template-rows: max-content;
+    padding-bottom: 0.5vmin;
+}
+
+.gamersBoardPopup{
+    margin-top: 2vh;
+    height: 60vmin;
+    display: grid;
+    grid-template-rows: max-content;
+    padding-bottom: 0.5vmin;
+}
+
+.popupContent{
+    flex: 1 1 auto;
+    padding-bottom: 0.5vmin;
+    overflow-y: auto;
+    padding: 0 1vmin;
+}
+
+.popupItemsContainer {
+    flex: 1 1 auto;
+    overflow-y: auto;
+}
+
+.paginationContainer {
+    margin-top: 4vmin;
+    margin-bottom: 4vmin;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.paginationItem {
+    height: 8vmin;
+    background-color: white;
+    box-shadow: 0 0 1px inherit;
+    border: 0.1vmin solid #eaeaea;
+    color: #9f88b7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2vmin;
+    font-family: 'Roboto Black';
+    font-size: 3.5vmin;
+    cursor: pointer;
+}
+
+.activePage {
+    background-color: #9f88b7;
+    color: white;
+}
+
+.gamersBoardHeader {
+    height: 2vh;
+    display: flex;
+    justify-content: center;
+    padding: 0 4vmin;
+    align-items: center;
+    color: white;
+    font-family: 'Roboto Black';
+    font-size: 3vmin;
+    margin: 0 1vmin 1.5vmin;
+    white-space: nowrap;
+}
+
+.paginationArrow {
+    width: 2vmin;
+}
+
+.drawsBoardHeader {
+    height: 2vh;
+    display: flex;
+    justify-content: center;
+    padding: 0 4vmin;
+    align-items: center;
+    color: white;
+    font-family: 'Roboto Black';
+    font-size: 3.2vmin;
+    margin: 6vmin 1vmin 1vmin;
+    white-space: nowrap;
+}
+
+.winnerContainer {
+    border-radius: 5vmin !important;
+    padding: 0 4vmin !important;
+}
+
+.winnerHeader {
+    color: white;
+    font-family: 'Roboto Black'; 
+    font-size: 3.2vmin;
+    padding-left: 6vmin;
+}
+
+.noGamer {
+    color: white;
+    font-family: 'Roboto Black'; 
+    margin: 2vmin auto;
+    font-size: 4vmin;
+}
+
+
+.winnerRow {
+    color: #69da87;
+    font-family: 'Prompt Black';
+    font-size: 3.9vmin;
+    padding: 0 1vmin ;
+}
+
+.gamersBoardHeader > div:nth-child(1) {
+    width: 20%;
+}
+
+.gamersBoardHeader > div:nth-child(2) {
+    width: 15%;
+}
+.gamersBoardHeader > div:nth-child(3) {
+    width: 17%;
+}
+
+.gamersBoardHeader > div:nth-child(4) {
+    letter-spacing: 0.1vmin;
+    width: 33%;
+}
+
+.gamersBoardHeader > div:nth-child(5) {
+    width: 18%;
+}
+
+.drawsBoardHeader > div:nth-child(1) {
+    width: 21%;
+}
+
+.drawsBoardHeader > div:nth-child(2) {
+    width: 22%;
+}
+.drawsBoardHeader > div:nth-child(3) {
+    width: 21%;
+}
+
+.drawsBoardHeader > div:nth-child(4) {
+    letter-spacing: 0.1vmin;
+    width: 34%;
+}
+
+.gamerItems {
+    overflow-y: auto;
+    border-radius: 0 0 15px 15px;
+}
+
+.winnerBoard {
+    margin-bottom: 3vmin;
+}
+
+.gamerItemContainer {
+    display: flex;
+    flex-direction: column;
+    border-radius: 20vmin;
+    background-color: #735594;
+    padding: 0 4vmin;
+    margin: 0.8vmin 1vmin;
+    opacity: 0.9;
+    justify-content: center;
+}
+
+.drawItemContainer {
+    display: flex;
+    flex-direction: column;
+    border-radius: 1vmin;
+    background-color: white;
+    padding: 0 4vmin;
+    margin: 0.8vmin .5vmin;
+    opacity: 0.9;
+    justify-content: center;
+    box-shadow: 0 0 1px inherit;
+}
+
+.gamerItems > div:nth-child(1){
+    margin-top: 0;
+}
+
+.gamerItem {
+
+    display: flex;
+    justify-content: center;
+    color: #e9e5ee;
+    align-items: center;
+    font-family: 'Roboto Black';
+    font-size: 2.6vmin;
+}
+
+.drawItem {
+
+    display: flex;
+    justify-content: center;
+    color: #b5a4c7;;
+    align-items: center;
+    font-family: 'Roboto Black';
+    font-size: 3.5vmin;
+}
+
+.scrollLoading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seeAllGamersScrollLoading {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2vmin;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.react-slideshow-container .nav:first-of-type {
+    margin-right: -9vmin !important;
+}
+
+.react-slideshow-container .nav:last-of-type {
+    margin-left: -9vmin !important;
+}
+
+.react-slideshow-container .nav {
+    height: 9vmin !important;
+    width: 9vmin !important;
+    background-color: initial !important;
+}
+
+.react-slideshow-container .nav span {
+    width: 3.5vmin !important;
+    height: 3.5vmin !important;
+    border-color: #fff !important;
+}
+
+/* .react-slideshow-container .nav:first-of-type span {
+    margin-left: 2vmin !important
+}
+
+.react-slideshow-container .nav:last-of-type span {
+    margin-right: 2vmin !important
+} */
+
+
+
+.gamerBoardBottomOpacity {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10vmin;
+    background-color: #735594;
+    opacity: 1;
+    border-radius: 0 0 15px 15px;
+    
+}
+
+.gamerItem > div:nth-child(1) {
+    color: #69da87;
+    width: 20%;
+}
+
+.gamerItem > div:nth-child(2) {
+    width: 15%;
+    line-height: 0;
+}
+.gamerItem > div:nth-child(3) {
+    color: #f5cf5b;
+    width: 17%;
+    margin: 2.1vmin 0
+}
+
+.gamerItem > div:nth-child(4) {
+    width: 26%;
+    padding-right: 6%;
+}
+
+.gamerItem > div:nth-child(5) {
+    width: 18%;
+}
+
+.drawItem > div:nth-child(1) {
+    width: 21%;
+    color: #9f88b7;
+}
+
+.drawItem > div:nth-child(2) {
+    width: 22%;
+    /* line-height: 0; */
+    font-size: 3vmin;
+}
+.drawItem > div:nth-child(3) {
+    width: 21%;
+    margin: 3vmin 0;
+    font-size: 3vmin;
+}
+
+.drawItem > div:nth-child(4) {
+    width: 34%;
+    color: #9581ad;
+}
+
+.selectedNumbersCounter {
+    display: flex;
+    flex-direction: column;
+}
+
+.selectedNumbersContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.numberSearchBar {
+    height: 15vmin;
+}
+
+.selectedNumbersBody {
+    display: flex;
+    justify-content: space-between;
+}
+
+.seeAllGamers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 2vmin;
+    left: 2.5vmin;
+    width: 49vmin;
+    height: 9vmin;
+    font-size: 4.1vmin;
+    font-family: 'Roboto Black';
+    background-color: #4dbc6a;
+    border-radius: 20vmin;
+    cursor: pointer;
+}
+
+.seeAllText {
+    color:#61477e;
+}
+
+.gamersCounter {
+    color: white
+}
+
+.lotoDesktopBanner {
+    display: none;
+}
+
+.howToPlay {
+    position: absolute;
+    right: 2vmin;
+    top: -14.5vmin;
+    cursor: pointer;
+    z-index: 6;
+}
+
+.howToPlay > img {
+    width: 21vmin;
+}
+
+.operatorItem {
+    width: 96%;
+    margin: 3vmin auto 3vmin;
+    border-radius: 7px;
+    
+}
+
+.operatorItemHeader {
+    margin: 0 3vmin;
+    display: flex;
+    height: 12vmin;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 0;
+    cursor: pointer;
+}
+
+.vodaLogo {
+    width: 36vmin;
+}
+
+.haloLogo {
+    width: 28vmin;
+}
+
+.tigoLogo {
+    width: 29vmin;
+}
+
+.airtelLogo {
+    width: 24vmin;
+}
+
+.operatorArrowDown{
+    width: 3vmin;
+}
+
+.activeOperatot {
+    transform: rotate(180deg)
+}
+
+.operatorItemContent{
+    display: block;
+    overflow-y: auto;
+    background-color: white;
+    border-radius: 0 0 7px 7px;
+    padding: 1vmin;
+    font-family: 'Roboto Bold';
+    font-size: 3.1vmin;
+    color: #00000060;
+}
+
+
+.operatorNameContainer {
+    margin-bottom: 2vmin;
+}
+
+.operatorItemContent > div{
+    margin-top: 2vmin;
+}
+
+.operatorStepContainer {
+    margin-bottom: 4vmin;
+}
+
+.operatorStepContainer > div {
+    margin-bottom: 1.5vmin;
+}
+
+.operatorStep {
+    color: #4dbc6a;
+    font-size: 3.5vmin;
+    padding-top: 2.5vmin;
+}
+
+.operatorStepText {
+    font-size: 3vmin;
+    color: rgba(0, 0, 0, 0.788);
+}
+
+.operatorName {
+    font-size: 4vmin;
+    color: #0000009d;
+    margin-bottom: 2vmin;
+}
+
+.checkNumbersHeader {
+    width: 100%;
+    margin-top: 3.5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #735594;
+    font-family: 'Roboto Black';
+    font-size: 5vmin;
+}
+
+.checkNumberBody {
+    position: relative;
+}
+
+
+.checkNumberBoards{
+    width: 74.4%;
+    max-width: 105vmin;
+    margin: 2vh auto;
+}
+
+.checkNumberTexts{
+    font-family: 'Roboto Bold';
+    color: #735594;
+    font-size: 4vmin;
+    margin-bottom: 1%
+}
+
+.checkNumberFields {
+    height: 9vmin;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1vmin;
+    color: #9f88b7;
+    box-shadow: 0 0 1px;
+    box-sizing: border-box;
+    line-height: 0;
+}
+
+.phoneIndex{
+    font-family: 'Roboto Bold';
+    font-size: 3vmin;
+    width: 10vmin;
+    justify-content: center;
+    display: flex;
+}
+
+.phoneNumberVerticalLine {
+    width: 1.9px;
+    height: 3.5vmin;
+    background-color: grey;
+    opacity: 0.4;
+    margin: 0 1vmin;
+}
+
+.phoneNumberInputContainer {
+    flex: 1 1 auto;
+}
+
+.phoneNumberIpnut {
+    width: 100%;
+    height: 100%;
+    color: #735594;
+    font-size: 4vmin;
+    font-family: 'Roboto Bold';
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.phoneNumberIpnut:focus {
+    text-decoration: none;
+    outline: none;
+}
+
+
+
+.chooseDrawIdContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1vmin 0 2vmin;
+    cursor: pointer;
+}
+
+.selectedDrawData {
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto Black';
+    color: #4dbc6a;
+    font-size: 3.5vmin;
+}
+
+.selectedDrawData > div:nth-child(1) {
+    font-family: 'Roboto Bold';
+    color: #9f88b7;
+}
+
+.selectedDrawData > div:nth-child(2) {
+    color: #735594;
+    margin-left: 1vmin;
+    font-size: 4vmin;
+}
+
+.selectedDrawData > div:nth-child(3) {
+    margin-left: 3.5vmin;
+}
+
+.selectedDrawData > div:nth-child(4) {
+    margin: 0 1.2vmin;
+}
+
+.arrowDownIcon {
+    width: 4vmin;
+}
+
+.arrowLeftIcon {
+    width: 6vmin;
+    transform: rotate(90deg);
+}
+
+.arrowRightIcon {
+    width: 6vmin;
+    transform: rotate(270deg);
+}
+
+.checkButtonBoard{
+    width: 54%;
+    margin: 5% auto;
+}
+
+.checkButtonContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.checkButton {
+    width: 100%;
+    max-width: 70vmin;
+    background-color: #4dbc6a;
+    border-radius: 40px;
+    height: 10.5vmin;
+    border: 0;
+    color: white;
+    font-size: 5.5vmin;
+    font-family: 'Roboto Black';
+    outline: none;
+    cursor: pointer;
+}
+
+.buttonDisabled {
+    background-color: white;
+    color: #d1ccd7;
+    box-shadow: 0 0 3px;
+    cursor: unset;
+}
+
+.footerBody {
+    background: url('../assets/images/footer.png') no-repeat;
+    width: 100%;
+    background-size: 100%;
+    position: relative;
+}
+
+.desktopFooterTop {
+    display: none;
+}
+
+.footerBall5 {
+    width: 18vmin;
+    position: relative;
+    top: -6vmin;
+}
+
+.footerBall10 {
+    width: 15.5vmin;
+    position: relative;
+    top: -3.5vmin;
+    left: -2vmin;
+}
+
+/* .footerLogo {
+    width: 16.5vmin;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20.5vmin;
+} */
+
+.footerLogo {
+    width: 16.5vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -5vmin auto 0;
+}
+
+.termsOfUseContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3vmin;
+    font-size: 5.5vmin;
+}
+
+.termsOfUseContainer > div:nth-child(2) {
+    margin-top: 4vmin;
+}
+
+.termsOfUseContainer > div:nth-child(3) {
+    margin-top: 4vmin;
+}
+
+.termsOfUseText {
+    font-family: 'Roboto Bold';
+    color: white;
+    cursor: pointer;
+}
+
+.socialMediaBoard {
+    width: 26vmin;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8vmin;
+}
+
+.socialMediaLogo {
+    width: 10.5vmin;
+    height: 10.5vmin;
+    cursor: pointer;
+}
+
+.textContent{
+    padding: 0 2vmin;
+}
+
+.languageBoard {
+    display: flex;
+    justify-content: space-between;
+    width: 62vmin;
+    margin: 0 auto;
+    margin-top: 6.5vmin;
+}
+
+.languageContainers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.flagImgs {
+    width: 9vmin;
+    height: 100%;
+    margin: 0.9vmin;
+}
+
+.activeLanguageFlag {
+    border: 0.4vmin solid #fffeff;
+    line-height: 0;
+}
+
+.languageText {
+    color: #876da5;
+    font-family: 'Roboto Bold';
+    margin-left: 0.5vmin;
+    font-size: 4.5vmin;
+}
+
+.activelanguageText {
+    color: #fffeff;
+}
+
+.allRightsReserved{
+    display: flex;
+    justify-content: center;
+    color: #a287c0;
+    font-family: 'Roboto Bold';
+    margin: auto;
+    font-size: 3vmin;
+    padding: 10vmin 0 5vmin;
+    background-color: #61477e;
+    margin-top: -7vmin;
+}
+
+.termsHeader{
+    display: flex;
+    justify-content: center;
+    color: #a287c0;
+    font-family: 'Roboto Bold';
+    margin: auto;
+    font-size: 2vmin;
+    padding: 3vmin 0 0;
+    background-color: #61477e;
+}
+
+.footerEnd {
+    background-color: #61477e;
+    height: 2vmin;
+}
+
+.test {
+    border: 1px solid red;
+}
+
+.test > img {
+    width: 100%;
+}
+
+/* how to play popup ------------------*/
+.popupBackground {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #000000a9;
+    z-index: 998;
+}
+
+.howToPlayBody {
+    position: fixed;
+    left: 2%;
+    top: 3%;
+    box-sizing: border-box;
+    width: 96%;
+    height: 94vh;
+    margin: 0 auto;
+    border-radius: 17px;
+    overflow: hidden;
+    background-color: #ededed;
+    z-index: 999;
+}
+
+.howToPlayHeader {
+    background-color: white;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vmin;
+    color: #755896;
+    font-family: 'Roboto Black';
+    font-size: 4.5vmin;
+    box-shadow: 0 0 1px;
+}
+
+
+.howToPlayNavItem {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.howToPlayHeader > div:nth-child(1) {
+    margin-left: 7vmin;
+}
+
+
+
+.closeIcon {
+    width: 4.5vmin;
+    margin-right: 4vmin;
+    cursor: pointer;
+    margin-top: 1.3vmin;
+}
+
+.activeHowToPlayHeader {
+    border-bottom: 0.8vmin solid #755896;
+}
+
+.howToPlayContent {
+    margin-top: 2vmin;
+    overflow-y: auto;
+    height: calc(98vh - 21vmin);
+}
+
+
+
+.howToPlayTitle {
+    font-size: 5.5vmin;
+    font-family: 'Roboto Black';
+    margin-bottom: 2.5vmin;
+}
+
+.howToPlayMiniTitle {
+    font-size: 4vmin;
+    margin-bottom: 2.5vmin;
+    font-family: 'Roboto Black';
+}
+
+.howToPlayMiniTitle > span {
+    font-size: 3vmin;
+    
+}
+
+.howToPlaytext {
+    margin-bottom: 7vmin;
+    color: #9d9d9d;
+    font-size: 4vmin;
+    margin-right: 15vmin;
+}
+
+/* All Games Popup  --------*/
+
+.allGamesBody {
+    position: fixed;
+    left: 2%;
+    top: 3%;
+    box-sizing: border-box;
+    width: 96%;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #ededed;
+    height: 94vh;
+    box-sizing: border-box;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+}
+
+.allGamesHeader {
+    background: url('../assets/images/header.png') no-repeat;
+    background-size: cover;
+    background-color: #61477e;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vmin;
+    color: #755896;
+    font-family: 'Roboto Black';
+    font-size: 4.3vmin;
+    box-shadow: 0 0 1px;
+    z-index: 111;
+}
+
+.allGamesNavItem {
+    color: white;
+}
+
+.allGamesHeader > div:nth-child(1) {
+    margin-left: 7vmin;
+}
+
+.allGamesNavContainer {
+    display: flex;
+    
+}
+
+.allGamesNavContainer > div:nth-child(2) {
+    margin-left: 6vmin;
+    
+}
+
+.allGamesNavContainer > div:nth-child(2) > span {
+    color: #d2b3f2;
+    font-size: 3.5vmin;
+}
+
+.allGamesSearchNumberText {
+    font-family: 'Roboto Bold';
+    color: #735594;
+    font-size: 3.2vmin;
+    margin-bottom: 1%
+}
+
+.searchIconContainer {
+    cursor: pointer;
+}
+
+.searchIcon {
+    width: 5vmin;
+    margin-right: 1vmin;
+}
+
+.gamersItem {
+    height: calc(92vh - 34vmin);
+    overflow-y: auto;
+}
+
+
+
+.searchNumberInputContainer {
+    margin-right: 1vmin ;
+    flex: 1 1 auto;
+}
+
+.colorChange {
+    color: #735594
+}
+
+/* Check Your Numbers Popup ----------- */
+
+.checkYourNumbersText {
+    font-size: 4.5vmin;
+}
+
+.chechNumberPopupBody {
+    width: 97%;
+    margin: 2vmin 0 0 2%;
+}
+
+.checkYourNumberPopupNav {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 2vh;
+    margin-right: 3%;
+}
+
+.checkYourNumberPopupNavItem {
+    background-color: #4dbc6a;
+    font-size: 3.3vmin;
+    color: white;
+    font-family: 'Roboto Black';
+    width: 31%;
+    height: 8vmin;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    line-height: 0;
+    font-size: 3vmin;
+    margin: 0 2%;
+    white-space: nowrap;
+}
+
+.CYNActivNavItem {
+    background-color: #6b4f8a;
+}
+
+.timeLogo {
+    width: 3.1vmin;
+    margin-right: 1.2vmin;
+}
+
+
+.CNPHeader {
+    height: 4vmin;
+    display: flex;
+    justify-content: center;
+    padding: 0 2.2vmin;
+    color: #735594;
+    font-family: 'Roboto Black';
+    font-size: 3.4vmin;
+    margin: 0.5vmin 1vmin 1.5vmin;
+    margin-right: 5%;
+}
+
+.CNPHeader > div:nth-child(1) {
+    width: 16%;
+}
+
+.CNPHeader > div:nth-child(2) {
+    width: 23%;
+}
+.CNPHeader > div:nth-child(3) {
+    width: 42%;
+}
+
+.CNPHeader > div:nth-child(4) {
+    letter-spacing: 0.1vmin;
+    width: 25%;
+}
+
+.CNPGameItem {
+    border-radius: 2vmin;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2vmin 3.5vmin;
+    font-family: 'Roboto Black';
+    font-size: 3vmin;
+    margin: 0.5vmin 0 2vmin;
+    box-shadow: 0 0 1px inherit;
+}
+
+.noTicketsContainer {
+        border-radius: 2vmin;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        padding: 2vmin 3.5vmin;
+        font-family: 'Roboto Black';
+        font-size: 3vmin;
+        margin: 0.5vmin 1vmin 2vmin;
+        box-shadow: 0 0 1px inherit;
+        color: #b5a4c7;;
+}
+
+.noTickets{
+    font-family: 'Roboto Black';
+    margin: 1vmin auto;
+    white-space: nowrap;
+    
+}
+
+.CNPGameItem > div:nth-child(1) {
+    color: #b5a4c7;
+    width: 15%;
+}
+
+.CNPGameItem > div:nth-child(2) {
+    width: 22%;
+    color: #73dc8e;
+}
+.CNPGameItem > div:nth-child(3) {
+    color: #9581ad;
+    width: 32%;
+    font-size: 3.5vmin;
+}
+
+
+.CNPGameItem > div:nth-child(4) {
+    color: #b5a4c7;
+    width: 23%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    border-left: 1px solid rgba(143, 142, 142, 0.116);
+    margin-left: 6%;
+    padding-left: 2%;
+    font-size: 3.4vmin;
+}
+
+
+.CNPInputContainer {
+    flex: 1 1 auto;
+    margin: 0 1vmin;
+    
+}
+
+.CNPGames{
+    height: calc(93vh - 45vmin);
+    overflow-y: auto;
+    padding-right: 3%;
+}
+
+.CNPGames > div:nth-last-child(1){
+    margin-bottom: 3vmin;
+}
+
+.dubleItem {
+    height: 14vmin;
+}
+
+.CNPInputField {
+    height: 9vmin;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5px;
+    color: #9f88b7;
+    box-shadow: 0 0 1px;
+    box-sizing: border-box;
+    margin-right: 3%;
+    line-height: 0;
+}
+
+.winAmount {
+    color: #73dc8e !important;
+}
+
+.winAmount > sup {
+    font-size: 2vmin;
+    position: relative;
+    top: -.5vmin;
+
+}
+
+.inProgress {
+    color: #4e6eaa !important;
+    font-size: 2.8vmin;
+    white-space: nowrap;
+}
+
+.tzsSup {
+    font-size: 3vmin;
+}
+
+.winMoto {
+    color: #f6d678 !important;
+}
+.CNPCurrency {
+    font-size: 2vmin;
+}
+
+/* Select Draw Popup ------- */
+
+.SDPBody {
+    width: 100%;
+    margin: 3vmin 0;
+    height: calc(98vh - 21vmin);
+    overflow-y: auto;
+    /* padding-bottom: 2vmin; */
+}
+
+
+
+.SDPItem {
+    width: 100%;
+    height: 9vmin;
+    border-radius: 20px;
+    background-color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    padding: 0 3vmin;
+    color: #61477e;
+    font-family: 'Roboto Black';
+    box-sizing: border-box;
+    margin-bottom: 2vmin;
+    font-size: 3.8vmin;
+    cursor: pointer;
+}
+
+.SDPCurrentLastWeek {
+    margin: 0 2%;
+}
+
+.SDPCurrentLastColor {
+    font-size: 3.5vmin;
+    color: #6ac380;
+    align-items: center;
+}
+
+.SDPItems {
+    margin: 0 2% 7vmin;
+    max-height: 67vh;
+    overflow-y: auto;
+}
+
+.SDPItemDate {
+    display: flex;
+    white-space: nowrap;
+}
+
+.SDPItemDate > div:nth-child(1) {
+    margin-right: 2vmin;
+}
+
+.SDPtimeIconImg {
+    width: 4vmin;
+}
+
+.SDPVerticaleLine {
+    height: 3.5vmin;
+    width: 0.5px;
+    opacity: 0.4;
+    background-color: gray;
+    margin: 0 3vmin;
+}
+
+.SDPItemDrawId {
+    color: #a591bb;
+}
+
+.SDPActiveItem {
+    color: #efeef0 ;
+    background-color: #644a80;
+}
+
+
+.textContainer {
+    font-family: 'Roboto Black';
+    font-size: 3vmin;
+    color: rgba(0, 0, 0, 0.548);
+    margin-bottom: 4vmin;
+}
+
+.boldTermsText {
+    font-weight: bold;
+    color: rgb(59, 59, 59);
+}
+
+.marginBottom {
+    margin-bottom: 3vmin;
+}
+
+.textHeader {
+    font-size: 4vmin;
+    margin-bottom: 2vmin;
+    color: black;
+}
+
+.bigLogo {
+    width: 32vmin;
+}
+
+.searchButtonDisabled {
+    background-color: rgb(192, 189, 189) !important;
+    box-shadow: 0 0 6px !important;
+    cursor: unset !important;
+}
+
+.marginTop {
+    margin-top: 10vmin;
+}
+
+.center {
+    text-align: center;
+}
+.colorWhite {
+    color: #e9e5ee !important
+}
+.noMoreBets {
+    padding-left: 1vmin;
+    font-size: 1.9vmin;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    color: rgb(255, 162, 162);
+    -webkit-animation: noMoreBets 1.5s linear infinite;
+	-moz-animation: noMoreBets 1.5s linear infinite;
+	-ms-animation: noMoreBets 1.5s linear infinite;
+	-o-animation: noMoreBets 1.5s linear infinite;
+	 animation: noMoreBets 1.5s linear infinite;
+}
+
+.PaginationArrowItem {
+    padding: 0 2.5vmin;
+}
+
+.noWinnerBall {
+    align-self: center;
+}
+
+.playerWinnerBall {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    z-index: 999;
+    color: black;
+}
+
+.navbarWrapper {
+    display: block;
+    color: #8369a0;
+    background-color: #ededed;
+    width: 100%;
+    position: relative;
+    font-family: 'Prompt Bold';
+    padding: 2vw 0;
+    box-sizing: border-box;
+}
+
+.navbarDesktopWrapper {
+    display: none;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    margin: 0 auto ;
+}
+
+.navbarItem {
+    opacity: 0.3;
+    cursor: pointer;
+}
+
+.navbarActiveItem {
+    opacity: 1;
+    border-bottom: 3px solid #8369a0 ;
+    cursor: default;
+ }
+
+.playerWinnerBall::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    border: .7vmin solid #308C46;
+    background-color: white;
+    border-radius: 50%;
+    height: 2.8vmin;
+    width: 2.8vmin;
+    z-index: -1;
+}
+
+.weeklyWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 49.5%;
+    padding-right: 2.5%;
+    padding-top: 8px;
+}
+
+.weeklyPrizeText {
+    margin-right: 17px;
+    font-size: 4.5vmin;
+    color: #8369a0;
+    margin-bottom: -2vmin;
+
+}
+
+.weeklyPriceCount {
+    font-size: 7vmin;
+    color: #4dbc6a;
+    margin-top: -3px;
+    letter-spacing: .5px;
+}
+
+.tzsText {
+    margin-left:-5px ;
+    font-size: 9px;
+}
+
+@-webkit-keyframes noMoreBets {
+	0% { color: rgb(255, 162, 162); }
+	50% { color: rgb(255, 162, 162); }
+	50.01% { color: white; }
+	100% { color: white; }
+}
+@-moz-keyframes noMoreBets {
+	0% { color: rgb(255, 162, 162); }
+	50% { color: rgb(255, 162, 162); }
+	50.01% { color: white; }
+	100% { color: white; }
+}
+@-ms-keyframes noMoreBets {
+	0% { color: rgb(255, 162, 162); }
+	50% { color: rgb(255, 162, 162); }
+	50.01% { color: white; }
+	100% { color: white; }
+}
+@-o-keyframes noMoreBets {
+	0% { color: rgb(255, 162, 162); }
+	50% { color: rgb(255, 162, 162); }
+	50.01% { color: white; }
+	100% { color: white; }
+}
+@keyframes noMoreBets {
+	0% { color: rgb(255, 162, 162); }
+	50% { color: rgb(255, 162, 162); }
+	50.01% { color: white; }
+	100% { color: white; }
+}
+
+
+
+
+
+/* @media only screen and (min-width : 768px) {
+    .termsOfUseContainer {
+        margin-top: 4.5vmin;
+        font-size: 3.5vmin;
+    }
+    .socialMediaBoard {
+        width: 20vmin;
+        margin-top: 5vmin;
+    }
+    .socialMediaLogo {
+        width: 7.5vmin;
+    }
+    .footerLogo {
+        width: 11.5vmin;
+        margin: -4vmin auto 0;
+    }
+    .termsOfUseContainer > div:nth-child(2) {
+        margin-top: 3vmin;
+    }
+    .languageBoard {
+        display: flex;
+        justify-content: space-between;
+        width: 45vmin;
+        margin: 0 auto;
+        margin-top: 4.5vmin;
+    }
+    .flagImgs {
+        width: 6vmin;
+        margin: 0.4vmin;
+    }
+    .languageText {
+        
+        font-size: 3vmin;
+    }
+    .allRightsReserved {
+        padding: 3vmin 0 2vmin; 
+        font-size: 2vmin;
+    }
+    .footerBall10 {
+        width: 12.5vmin;
+    }
+    .footerBall5 {
+        width: 15vmin;
+    }
+    .checkButtonBoard{
+        width: 40%;
+        margin: 4% auto;
+    }
+    .checkButton {
+        font-size: 4vmin;
+        height: 7.5vmin;
+        width: 80%;
+    }
+    .checkNumbersHeader {
+        
+        font-size: 3.5vmin;
+    }
+    .arrowDownIcon {
+        width: 3vmin;
+    }
+    .checkNumberTexts {
+        font-size: 3vmin;
+    }
+    .checkNumberBoards {
+        width: 60%;
+    }
+    .checkNumberFields {
+        height: 7vmin;
+    }
+    .phoneIndex {
+        font-size: 2.5vmin;
+    }
+    .phoneNumberIpnut {
+        font-size: 3vmin;
+    }
+    .lotoTabs {
+        font-size: 4.5vmin;
+    }
+    
+} */
+
+
+@media screen and (min-width : 1024px) {
+    ::-webkit-scrollbar {
+        width: 0.5vmin;
+        height: 0.8vmin;
+    }
+    .logo {
+      width: 110px;  
+    }
+    .lotoHeaderVerticalLine {
+        display: none;
+    }
+    .lotoHeaderJackpot {
+        flex-direction: row;
+        padding-top: 0;
+        align-items: center;
+    }
+    .lotoHeaderJackpot > div:nth-child(3) {
+        font-size: 2.5vmin;
+        margin-top: 0;
+        align-items: center;
+    }
+    .lotoHeaderJackpot > div:nth-child(1) {
+        font-size: 2.5vmin;
+        font-weight: bold
+    }
+    .jackpotTime {
+        width: 14vmin;
+        margin-left: 2vmin;
+    }
+    .lotoDesktopHeaderVerticalLine {
+        width: 1px;
+        height: 3vmin;
+        background-color: gray;
+        opacity: 0.4;
+        margin: 0 2vmin;
+        align-items: center;
+    }
+    .lotoHeaderJackpot .jackpotCurrency {
+        font-size: 1.5vmin;
+        line-height: 0vmin;
+    }
+    .lotoBanner {
+        display: none;
+    }
+
+    .navbarWrapper {
+        display: none;
+    }
+
+    .navbarDesktopWrapper {
+        display: block;
+        color: #8369a0;
+        width: 400px;
+        position: relative;
+        font-family: 'Prompt Bold';
+        /* padding: 2vw 0; */
+        box-sizing: border-box;
+    }
+
+    .lotoHeader {
+        padding: 10px 15px;
+        height: 55px;
+
+    }
+    .lotoHeader .lotoHeaderLogo, .lotoHeader .lotoHeaderJackpot {
+        width: unset;
+    }
+    .lotoHeaderLogo {
+    margin-left: unset;
+    }
+    .desktopGameContainer {
+        display: flex;
+        width: 95%;
+        max-width: 1300px;
+        margin: 0 auto;
+        margin-bottom: 15vmin;
+    }
+    .desktopGameContainer > div {
+        width: 45%;
+        margin: 0 auto;
+        padding: 0 3vmin;
+    }
+    .waitingBlock {
+        width: 19vmin;
+    }
+    .historyBlock {
+        width: calc(98% - 19vmin);
+    }
+    .WGDate {
+        font-size: 1.7vmin;
+    margin-bottom: unset;
+
+    }
+    .WGDraw {
+        font-size: 1.5vmin;
+    }
+    .historyGame, .waitingGame {
+        border-radius: 2vmin;
+        margin-top: 2vmin;
+        padding: 1.5vmin;
+    }
+    .historyActiveGame {
+        width: 2vmin;
+    }
+    .waitingGameLine {
+        width: 0.4vmin;
+        height: 2vmin;
+        margin: 0 1.2vmin;
+    }
+    .waitingActiveGame {
+        width: 1.2vmin;
+    }
+    .activeWaitingGameArrow {
+    border-left: 1.5vmin solid transparent;
+    border-right: 1.5vmin solid transparent;
+    border-top: 1.3vmin solid #735594;
+    bottom: -1vmin;
+    }
+    .waitingArrowAnimation {
+        border-top: 1.3vmin solid #4dbc6a;
+        transition: all 2s ease;
+    }
+    .activeHistoryGameArrow {
+        border-left: 1.5vmin solid transparent;
+        border-right: 1.5vmin solid transparent;
+        border-top: 1.3vmin solid #269662;
+        bottom: -1vmin;
+    }
+
+    .historyBlockScroll {
+        height: 12vmin;
+    }
+    
+    .waitingRowHeader, .historyRowHeader {
+        font-size: 1.5vmin;
+    }
+    .lotoDesktopBanner {
+        border-radius: 2vmin;
+        width: 90%;
+        margin: 0 auto;
+        display: block;
+        overflow: hidden;
+        margin-top: 6vmin;
+    }
+    .lotoNav {
+        display: flex;
+        justify-content: center;
+        font-family: 'Roboto Bold';
+        font-size: 2.5vmin;
+        margin-top: 0vmin;
+    }
+    .lotoNav > div {
+        margin: 2vmin 3vmin 0;
+    }
+
+    .lotoNavActive {
+        color: #8369a0;
+        border-bottom: 1.9px solid #8369a0;
+        padding-bottom: 0.8vmin;
+    }
+    .winLogo {
+        height: 5vmin;
+    }
+    .motoText {
+        font-size: 3.1vmin;
+        margin-top: 0;
+    }
+    .winBoardTime {
+        font-size: 3.2vmin;
+        margin-top: -0.5vmin;
+    }
+    .rightMoto, .leftMoto {
+        top: 3vmin;
+    }
+    .moto {
+        width: 9vmin;
+    }
+    .jackpotLogo {
+        width: 25vmin;
+    }
+
+    .jackpotBoardCurrency > sup {
+        font-size: 1.8vmin;
+    }
+
+    .jackpotBoardCurrency {
+        font-size: 4.3vmin;
+        margin-left: 2vmin;
+        margin-top: -1vmin;
+        display: flex;
+        justify-content: center;
+    }
+
+    .gamersBoardHeader {
+        padding: 0 2vmin;
+        font-size: 1.6vmin;
+        margin-bottom: 0.8vmin;
+    }
+
+    .drawsBoardHeader {
+        padding: 0 2vmin;
+        font-size: 1.8vmin;
+        margin-bottom: 0.8vmin;
+        margin-top: 0;
+    }
+
+    .winnerHeader {
+        margin: 0 1vmin;
+        padding: 0 2.5vmin;
+        font-size: 1.8vmin;
+    }
+
+    .gamerItem {
+        font-size: 1.6vmin;
+    }
+
+    .gamerItem > div:nth-child(3) {
+        margin: 1.3vmin 0;
+    }
+    
+    .playerWinnerBall::before {
+        border: .5vmin solid #308C46;
+        height: 2vmin;
+        width: 2vmin;
+    }
+
+    .drawItem {
+        font-size: 1.8vmin;
+    }
+
+    .drawItem > div:nth-child(2) {
+        font-size: 1.6vmin;
+    }
+
+    .drawItem > div:nth-child(3) {
+        margin: 1.3vmin 0;
+        font-size: 1.6vmin;
+    }
+
+    .noGamer {
+        margin: 1vmin auto;
+        font-size: 2.2vmin;
+    }
+    .checkNumbersHeader {
+        font-size: 2vmin;
+    }
+    .arrowDownIcon {
+        width: 2vmin;
+    }
+    .checkButton {
+        height: 4vmin;
+        font-size: 2.5vmin;
+    }
+    .checkButtonBoard{
+        width: 56%;
+    }
+    .gamersBoard, .gamersBoardPopup{
+        height: 39vmin;
+    }
+    .phoneIndex {
+        font-size: 1.5vmin;
+        width: 6vmin;
+    }
+    .checkNumberFields {
+        height: 4.5vmin;
+        border-radius: 9px;
+    }
+    .phoneNumberVerticalLine {
+        height: 1.9vmin;
+        margin: 0 1vmin;
+    }
+    .phoneNumberIpnut {
+        font-size: 2vmin;
+    }
+    .checkNumberTexts {
+        font-size: 1.5vmin;
+    }
+
+    .gamerItemContainer {
+        padding: 0 2vmin;
+        margin: .5vmin 1vmin;
+    }
+
+    .drawItemContainer {
+        padding: 0 2vmin;
+        margin: .5vmin 1vmin;
+    }
+    .winnerContainer {
+        padding: 0 2vmin !important;
+        border-radius: 3vmin !important;
+    }
+
+
+    .winnerRow {
+        font-size: 1.8vmin;
+        padding: 0 1vmin;
+    }
+
+    .ellipse {
+        width: 45vmin;
+    }
+    /* .gamersBoardHeader > div:nth-child(4) {
+        width: 35%;
+    } */
+    .seeAllGamers {
+        width: 28vmin;
+        height: 4vmin;
+        font-size: 2.1vmin;
+    }
+    .checkNumberBoards {
+        width: 57.4%;
+        max-width: 105vmin;
+        margin: 2vh auto;
+    }
+    .gameBoard {
+        width: 98%;
+        margin-top: 2vmin;
+        padding-bottom: 0.1vmin;
+    }
+    .gameBoardHeader {
+        height: 19vmin;
+    }
+    .howToPlay {
+        right: 0vmin;
+        top: unset;
+        bottom: -13vmin;
+        cursor: pointer;
+    }
+    
+    .howToPlay > img {
+        width: 10vmin;
+    }
+    
+    .footerLogo {
+        width: 6.5vmin;
+        margin: 2vmin auto 0;
+        padding-top: 3vmin;
+    }
+    .termsOfUseContainer {
+        margin-top: 1.2vmin;
+        font-size: 1.8vmin;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 2.5vmin;
+    }
+    .socialMediaBoard {
+        width: 9vmin;
+        margin-top: 1.5vmin;
+    }
+    .socialMediaLogo {
+        width: 3.5vmin;
+        height: 3.5vmin;
+    }
+    .languageBoard {
+        width: 25vmin;
+        margin-top: 1.5vmin;
+    }
+    .flagImgs {
+        width: 4vmin;
+        margin: 0.4vmin;
+    }
+    .languageText {
+        font-size: 1.5vmin;
+    }
+    .allRightsReserved {
+        font-size: 1.5vmin;
+        padding: 2vmin 0 1vmin;
+        margin-top: 0;
+    }
+
+    .termsHeader{
+        font-size: 1vmin;
+        padding: 2vmin 0 0;
+    }
+    .termsOfUseContainer > div:nth-child(2) {
+        margin: 0 3vmin
+    }
+
+    .termsOfUseContainer > div:nth-child(3) {
+        margin-top: 0;
+    }
+
+    .activeLanguageFlag {
+        border: 0.2vmin solid #fffeff;
+    }
+    .footerBall5 {
+        width: 7vmin;
+        position: absolute;
+        top: -9vmin;
+        left: 5vmin;
+        z-index: 5;
+    }
+    .footerBall10 {
+        width: 5.5vmin;
+        position: absolute;
+        top: -4.5vmin;
+        left: 11vmin;
+        z-index: 5;
+    }
+    .footerBody {
+        background: #61477e;
+    }
+    .desktopFooterTop {
+        display: unset;
+        position: absolute;
+        top: -6vmin;
+        width: 48vmin;
+        transform: rotate(5deg);
+        left: -2vmin;
+    }
+    .allGamesBody {
+        position: fixed;
+        width: 37vw;
+        height: 84vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+    }
+    .howToPlayBody{
+        position: fixed;
+        width: 37vw;
+        height: 84vh;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .howToPlayHeader {
+        flex: 0 0 7vmin;
+        height: unset;
+        font-size: 2.5vmin;
+    }
+
+    .howToPlayContent {
+        height: unset;
+        flex: 1 1 auto;
+        padding-bottom: 2vmin;
+    }
+
+    .howToPlaytext {
+        font-size: 2.2vmin;
+        margin-bottom: 5vmin;
+        margin-right: 12vmin;
+    }
+
+    .howToPlayMiniTitle > span {
+        font-size: 2.2vmin;
+    }
+    
+    .chooseDrawIdContainer {
+        padding: 0 1vmin 0 1vmin;
+    }
+
+    .selectedDrawData {
+        font-size: 1.6vmin;
+        white-space: nowrap;
+    }
+    
+
+    .selectedDrawData > div:nth-child(2) {
+        margin-left: .7vmin;
+        font-size: 1.7vmin;
+        margin-right: 0;
+    }
+
+    .selectedDrawData > div:nth-child(3) {
+        margin-left: 1vmin;
+    }
+
+    .selectedDrawData > div:nth-child(4) {
+        margin: 0 .7vmin;
+    }
+
+    .howToPlayMiniTitle {
+        font-size: 2vmin;
+        margin-bottom: 1.5vmin;
+    }
+    .howToPlayTitle {
+        font-size: 3vmin;
+        margin-bottom: 1.5vmin;
+    }
+
+    .searchIcon {
+        width: 2vmin;
+        margin-right: 1vmin;
+    }
+    .allGamesHeader {
+        flex: 0 0 6vmin;
+        font-size: 2.5vmin;
+    }
+    .blackBackground{
+        padding: 0;
+    }
+    .allGamesNavContainer > div:nth-child(2) > span {
+        font-size: 2.3vmin;
+    }
+    .closeIcon {
+        width: 2.8vmin;
+        margin-right: 3vmin;
+    }
+    .numberSearchBar {
+        height: unset;
+        flex: 0 0 9vmin;
+    }
+    .allGamesSearchNumberText {
+        font-size: 2vmin;
+    }
+    .SDPVerticaleLine {
+        height: 2.5vmin;
+    }
+    .SDPItem {
+        padding: 1vmin 3vmin;
+        height: unset;
+        font-size: 1.9vmin;
+        margin-bottom: 1.3vmin;
+    }
+    .SDPtimeIconImg {
+        width: 2vmin;
+    }
+    .SDPBody {
+        width: 100%;
+        margin: 3vmin 0 0 0;
+        flex: 1 1 auto;
+        overflow-y: auto;
+    }
+    .checkYourNumbersText {
+        font-size: 2.5vmin;
+    }
+    .checkYourNumberPopupNavItem {
+        height: 5vmin;
+        font-size: 1.6vmin;
+    }
+
+    .timeLogo {
+        width: 1.8vmin;
+    }
+    .CNPHeader {
+        height: 3vmin;
+        font-size: 2vmin;
+        align-items: center;
+        margin-bottom: .5vmin;
+    }
+    .CNPGameItem {
+        border-radius: 2vmin;
+        font-size: 1.8vmin;
+        padding: 1.4vmin 3.5vmin;
+        border-radius: 1.5vmin;
+        margin: 0.5vmin 0 1.3vmin;
+    }
+
+    .noTicketsContainer {
+        border-radius: 2vmin;
+        font-size: 1.8vmin;
+        padding: 1.4vmin 3.5vmin;
+        border-radius: 1.5vmin;
+        margin: 0.5vmin 1vmin 1.3vmin;
+}
+    .CNPGameItem > div:nth-child(3) {
+        font-size: 2vmin;
+    }
+    .CNPGameItem > div:nth-child(4) {
+        font-size: 2vmin;
+    }
+    .dubleItem {
+        height: unset;
+    }
+    .CNPInputField {
+        height: 6vmin;
+    }
+    .CNPGames {
+        height: calc(93vh - 39vmin);
+        flex: 1 1 auto;
+    }
+    .chechNumberPopupBody {
+        height: calc(95vh - 6vmin);
+    }
+    .winnerBoard {
+        margin-bottom: 1.5vmin;
+    }
+    .ball {
+        width: 4.5vmin;
+    }
+
+    .ballNumber {
+        font-size: 2.2vmin;
+    }
+
+    .currentBall {
+        position: absolute;
+        top: 4.5vmin;
+        left: 3.5vmin;
+    }
+
+    .gamersItem {
+        height: calc(92vh - 28vmin);
+    }
+
+    .SDPCurrentLastColor {
+        font-size: 1.8vmin;
+    }
+
+    .waitingHistoryBlock {
+        margin-top: 5vmin;
+    }
+
+    .currentBallImage {
+        width: 8vmin;
+    }
+
+    
+    .winAmount > sup {
+        font-size: 1.1vmin;
+
+    }
+    .tzsSup {
+        font-size: 1.4vmin;
+    }
+
+    .currentBallNumber {
+        font-size: 4vmin;
+    }
+    .winnerContainer > div > div:nth-child(3) {
+        margin: 1vmin 0 0.5vmin 0 !important;
+    }
+    .congratulation{
+        font-size: 3vmin;
+        margin-bottom: 0.5vmin;
+    }
+    .SDPItems {
+        max-height: 50vh;
+    }
+    .historyBlockScrollAnimation {
+        transition: all 2s ease;
+        margin-left: 21vmin;
+    }
+    .waitingGameAnimation {
+        margin-right: -21vmin;
+        margin-left: 21vmin;
+        background-color: #4dbc6a;
+        transition: all 2s ease, opacity 0.3s ease 1.9s;
+        opacity: 0;
+    }
+    .react-slideshow-container .nav:first-of-type {
+        margin-right: -6vmin !important;
+    }
+    
+    .react-slideshow-container .nav:last-of-type {
+        margin-left: -6vmin !important;
+    }
+    
+    .react-slideshow-container .nav {
+        height: 6vmin !important;
+        width: 6vmin !important;
+    }
+    
+    .react-slideshow-container .nav span {
+        width: 2vmin !important;
+        height: 2vmin !important;
+    }
+    .operatorItem {
+        margin: 2vmin auto 0;
+    }
+    .operatorItemHeader {
+        height: 6vmin;
+    }
+    .textContainer {
+        font-size: 1.5vmin;
+    }
+
+    .marginTop {
+        margin-top: 6vmin;
+    }
+    
+    .textHeader {
+        font-size: 2vmin;
+        margin-bottom: 1vmin;
+    }
+    .vodaLogo {
+        width: 20vmin;
+    }
+    
+    .haloLogo {
+        width: 13vmin;
+    }
+    
+    .tigoLogo {
+        width: 13vmin;
+    }
+    
+    .airtelLogo {
+        width: 11vmin;
+    }
+    .operatorArrowDown{
+        width: 2vmin;
+    }
+    
+    .operatorItemContent{
+        padding: 1vmin;
+        font-size: 1.5vmin;
+    }
+
+
+    .operatorNameContainer {
+        margin-bottom: 1vmin;
+    }
+
+    .operatorItemContent > div{
+        margin-top: 1vmin;
+    }
+
+    .operatorStepContainer {
+        margin-bottom: 3vmin;
+    }
+
+    .operatorStepContainer > div {
+        margin-bottom: .5vmin;
+    }
+
+    .operatorStep {
+        font-size: 1.7vmin;
+        padding-top: 1.8vmin;
+    }
+
+    .operatorStepText {
+        font-size: 1.5vmin;
+    }
+
+    .operatorName {
+        font-size: 2.2vmin;
+        margin-bottom: 1vmin;
+    }
+
+    .clearInput > p {
+        font-size: 1.5vmin;
+    }
+    .PMLogo {
+        width: 17vmin;
+    }
+
+    
+    .paginationContainer {
+        margin-top: 1vmin;
+        margin-bottom: 3vmin;
+    }
+
+    .paginationItem {
+        height: 4vmin;
+        padding: 0 1vmin;
+        font-size: 1.8vmin;
+    }
+
+    .paginationArrow {
+        width: 1vmin;
+    }
+    .PaginationArrowItem {
+        padding: 0 1.5vmin;
+    }
+    
+
+    .popupContent{
+        padding: 0
+    }
+
+    .inProgress {
+        font-size: 1.4vmin
+    }
+    .noMoreBets {
+        padding-left: 1vmin;
+        font-size: 1.1vmin;
+    }
+
+    .bigLogo {
+        width: 20vmin;
+    }
+
+    .weeklyWrapper {
+        width: 110px;
+        white-space: nowrap;
+        padding-right: 0;
+        padding-top: 0;
+    }
+    
+    .weeklyPrizeText {
+        font-size: 13px;
+        margin-bottom: -3px;
+    }
+    
+    .weeklyPriceCount {
+        font-size: 18px;
+    }
+    
+    /* .tzsText {
+        margin-left:-5px ;
+        font-size: 9px;
+    } */
+
+
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1380px) {
+    .allGamesBody {
+        width: 50vw;
+    }
+    
+}
+
+@media screen and (min-width: 1900px) {
+    .desktopGameContainer {
+        max-width: 1700px;
+    }
+    .gamerItem {
+        font-size: 1.6vmin;
+    }
+    .drawItem {
+        font-size: 2vmin;
+    }
+    .gamersBoardHeader {
+        font-size: 1.9vmin;
+    }
+    .inProgress {
+        font-size: inherit;
+    }
+    .noWinnerBall {
+        align-self: center;
+    }
+    
+    .playerWinnerBall {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+        color: black;
+    }
+    
+    .playerWinnerBall::before {
+        border: .6vmin solid #308C46;
+        height: 2vmin;
+        width: 2vmin;
+    }
+}
+
+
+
+/* orintation - landscape ----- */
+/* .orientation {
+    display: none;
+}
+
+@media (orientation: landscape) {
+    .loto div {
+        position: relative;
+        display: none;
+    }
+
+    .blackBackground {
+        display: none;
+    }
+
+    .orientation {
+        display: block;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 600;
+
+        width: 35%;
+        transform: translate(-50%, -50%);
+        animation: orientation-rotate 4s infinite;
+    }
+    
+    @keyframes orientation-rotate {
+        0% {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+        50% {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        100% {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+    }
+
+    .orientation img {
+        width: 100%;
+        height: auto;
+    }
+} */
+
+
